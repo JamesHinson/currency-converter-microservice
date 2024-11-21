@@ -63,3 +63,6 @@ The microservice returns a JSON object with the following fields:
 ### Important Notes
 - You must first create a `.env` file to contain your own API key provided by https://continentl.com.
 - You must also first download the required dependencies from `requirements.txt` before using the microservice.
+
+## UML Diagram
+![image](https://github.com/user-attachments/assets/8189a777-e2f4-47a2-b157-95e000d343c7)
