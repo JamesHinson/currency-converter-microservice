@@ -39,3 +39,7 @@ The microservice returns a JSON object with the following fields:
   "to_currency": "EUR"
 }
 ```
+
+### Important Notes
+- You must first edit the included `.env` file to contain your own API key provided by https://continentl.com.
+- You must also first download the microservice requirements from `requirements.txt` before using the microservice.

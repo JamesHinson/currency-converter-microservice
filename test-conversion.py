@@ -12,6 +12,7 @@ def test_microservice():
         "to_currency": to_currency,
         "amount": amount
     })
+    
 
     # Display response
     if response.status_code == 200:
