@@ -4,26 +4,24 @@
 This microservice provides live currency conversion rates and calculates converted amounts based on input parameters.
 
 ## How to Run
-Follow these steps to run the Currency Converter Microservice:
-
 ### Prerequisites
-1. Ensure Python 3.7+ is installed on your system.
-2. Install the required Python dependencies by running:
-    ```bash
-    pip install -r requirements.txt
-    ```
-3. (Optional) If you have an API key for the external currency exchange API, set it up:
-   - Create a .env file in the project directory.
-   - Add the following line to the .env file:
-       ```env
-       API_KEY=your-api-key-here
-       ```
-4. Running the Application
-   - Start the Flask server by running:
-       ```bash
-       python app.py
-       ```
-   - Once the server is running, it will be accessible at http://localhost:5000.
+1. Install Python 3.7+.
+2. Install required dependencies:
+```bash
+pip install -r requirements.txt
+```
+3. (Optional) Set up an API key for the external currency exchange service:
+- Create a .env file in the project directory.
+- Add the following line to the file:
+```env
+API_KEY=your-api-key-here
+```
+## Running the Application
+1. Start the Flask server:
+```bash
+python app.py
+```
+2. Access the service at http://localhost:5000.
 
 ## Communication Contract
 
@@ -63,5 +61,5 @@ The microservice returns a JSON object with the following fields:
 ```
 
 ### Important Notes
-- You must first edit the included `.env` file to contain your own API key provided by https://continentl.com.
+- You must first create a `.env` file to contain your own API key provided by https://continentl.com.
 - You must also first download the required dependencies from `requirements.txt` before using the microservice.
