@@ -7,7 +7,7 @@ def test_microservice():
     amount = 100.0
 
     # Send request to microservice
-    response = requests.get("http://127.0.0.1:5000/convert", params={
+    response = requests.get("http://127.0.0.1:8000/convert", params={
         "from_currency": from_currency,
         "to_currency": to_currency,
         "amount": amount

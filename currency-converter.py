@@ -55,11 +55,19 @@ def convert_currency():
         # Get input parameters
         from_currency = request.args.get('from_currency')
         to_currency = request.args.get('to_currency')
-        amount = float(request.args.get('amount'))
+        amount = request.args.get('amount')
 
         # Validate inputs
-        if not from_currency or not to_currency or amount <= 0:
-            return jsonify({"error": "Invalid input parameters"}), 400
+        if not from_currency or not to_currency or not amount:
+            return jsonify({"error": "Missing required parameters"}), 400
+
+        try:
+            amount = float(amount)
+        except ValueError:
+            return jsonify({"error": "Amount must be a number"}), 400
+
+        if amount <= 0:
+            return jsonify({"error": "Amount must be greater than zero"}), 400
 
         # Attempt to fetch exchange rate from API
         try:
@@ -89,11 +97,9 @@ def convert_currency():
             "from_currency": from_currency,
             "to_currency": to_currency
         })
-    except ValueError:
-        return jsonify({"error": "Amount must be a number"}), 400
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8000)  
